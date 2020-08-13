@@ -223,8 +223,21 @@ JOIN products p ON p.product_id=o.product_id
 WHERE o.order_id = 2
 --Add Foreign key to users from orders--
 ALTER TABLE orders
-ADD COLUMN users_id INT REFERENCES users(users_id);
+ADD COLUMN user_id INT REFERENCES users(user_id);
 --Update the orders table to link a user to each order--
+UPDATE orders
+SET user_id = 1
+WHERE order_id = 1
+
+UPDATE orders
+SET user_id = 2
+WHERE order_id = 2
+
+UPDATE orders
+SET user_id = 3
+WHERE order_id = 3
+--Run Query--
+
 
 
 
